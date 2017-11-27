@@ -24,7 +24,7 @@ Note: Yale, SL Wong, and Penkyamp are available both using numerals and diacriti
 
 ## Demo
 
-There is an online demo [here](https://dohliam.github.io/pingyam/).
+There is an online demo [here](https://dohliam.github.io/pingyam-js/).
 
 ## Examples
 
