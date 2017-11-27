@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <title>粵語拼音轉換</title>
+    <link rel="stylesheet" type="text/css" href="https://dohliam.github.io/dropin-minimal-css/vendor/concise.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      body {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      #convertto {
+        padding: 15px;
+        padding-bottom: 0;
+      }
+      #results {
+        padding-top: 15px;
+      }
+      #rcontainer {
+        margin: 15px;
+        padding: 15px;
+        border: 2px solid #2b90d9;
+        border-radius: 5px;
+      }
+      nav {
+        padding-right: 15px;
+        text-align: right;
+      }
+    </style>
+    <script src="pingyam.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+      function yuepinzh(v) {
+        text = document.getElementById("converttext").value;
+        frompin = document.getElementById("frompin").value;
+        topin = document.getElementById("topin").value;
+        results = document.getElementById("results");
+        container = document.getElementById("rcontainer");
+        text = text.replace(/\n/g, " <br> ");
+        textsplit = text.split(/\s+/);
+        resarray = [];
+        for (var i = 0; i < textsplit.length; i++) {
+          syll = textsplit[i].toLowerCase();
+          ispy = false;
+          stripped = syll.replace(/(.*[\d¹²³⁴-⁹˥˧˨˩]).*/, "$1");
+          trailing = syll.replace(/.*[\d¹²³⁴-⁹˥˧˨˩]/, "");
+          if (/1|4/.test(frompin)) {
+            puncts = /[,\.\?\!@#\$%\^&\*\(\)\[\]\{\}":;~\-\+=<>]+$/;
+            punctt = /.*([,\.\?\!@#\$%\^&\*\(\)\[\]\{\}":;~\-\+=<>]*)$/;
+            stripped = syll.replace(puncts, "");
+            trailing = syll.replace(punctt, "$1");
+          }
+          for (var key in yuepin) {
+            if (yuepin.hasOwnProperty(key)) {
+              line = yuepin[key];
+              linesplit = line.split(',');
+              source = linesplit[frompin];
+              target = linesplit[topin];
+              if (source == stripped) {
+                resarray.push(target + trailing);
+                ispy = true;
+              }
+            }
+          }
+          if (ispy != true) {
+            resarray.push(syll);
+          }
+        }
+        container.style.display = "";
+        results.innerHTML = resarray.join(" ");
+      }
+
+    </script>
+  </head>
+  <body>
+    <nav>
+      <a href="index_en.html">ENG</a> · <a href="https://github.com/dohliam/pingyam">原始碼</a>
+    </nav>
+    <h1>粵語拼音轉換</h1>
+    <div id="converter">
+      <textarea id="converttext" rows=10 cols=40 placeholder="輸入粵語拼音"></textarea><br>
+      原文：
+      <select id="frompin" onchange="yuepinzh()">
+        <option value="0">耶魯拼音（數字）</option>
+        <option value="1">耶魯拼音（調符）</option>
+        <option value="2">教院拼音</option>
+        <option value="3">黃錫凌（數字）</option>
+        <option value="4">黃錫凌（調符）</option>
+        <option value="5">國際音標</option>
+        <option value="6">粵拼</option>
+        <option value="7">廣州拼音</option>
+        <option value="8">劉錫祥</option>
+        <option value="9">粵語拼音字（數字）</option>
+        <option value="10">粵語拼音字（調符）</option>
+      </select><br>
+      轉成：
+      <select id="topin" onchange="yuepinzh()">
+        <option value="0">耶魯拼音（數字）</option>
+        <option value="1">耶魯拼音（調符）</option>
+        <option value="2">教院拼音</option>
+        <option value="3">黃錫凌（數字）</option>
+        <option value="4">黃錫凌（調符）</option>
+        <option value="5">國際音標</option>
+        <option value="6">粵拼</option>
+        <option value="7">廣州拼音</option>
+        <option value="8">劉錫祥</option>
+        <option value="9">粵語拼音字（數字）</option>
+        <option value="10">粵語拼音字（調符）</option>
+      </select><br>
+
+      <button type="button" onclick="yuepinzh()">轉換</button><br>
+
+      <div id="rcontainer" style="display:none">
+        <div id="rheader"><h3>結果：</h3></div>
+        <div id="results">&nbsp;</div>
+      </div>
+    </div>
+  </body>
+</html>
