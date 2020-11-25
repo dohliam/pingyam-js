@@ -68,7 +68,7 @@
           }
         }
         container.style.display = "";
-        results.innerHTML = resarray.join(" ");
+        results.value = resarray.join(" ");
       }
 
     </script>
@@ -113,7 +113,7 @@
 
       <div id="rcontainer" style="display:none">
         <div id="rheader"><h3>結果：</h3></div>
-        <div id="results">&nbsp;</div>
+        <textarea id="results" placeholder="" accesskey="o"></div>
       </div>
     </div>
   </body>
