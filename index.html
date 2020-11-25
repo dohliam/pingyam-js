@@ -79,9 +79,9 @@
     </nav>
     <h1>粵語拼音轉換</h1>
     <div id="converter">
-      <textarea id="converttext" rows=10 cols=40 placeholder="輸入粵語拼音"></textarea><br>
+      <textarea id="converttext" rows=10 cols=40 placeholder="輸入粵語拼音" accesskey="i"></textarea><br>
       原文：
-      <select id="frompin" onchange="yuepinzh()">
+      <select id="frompin" onchange="yuepinzh()" accesskey="f">
         <option value="0">耶魯拼音（數字）</option>
         <option value="1">耶魯拼音（調符）</option>
         <option value="2">教院拼音</option>
@@ -95,7 +95,7 @@
         <option value="10">粵語拼音字（調符）</option>
       </select><br>
       轉成：
-      <select id="topin" onchange="yuepinzh()">
+      <select id="topin" onchange="yuepinzh()" accesskey="t">
         <option value="0">耶魯拼音（數字）</option>
         <option value="1">耶魯拼音（調符）</option>
         <option value="2">教院拼音</option>
