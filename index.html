@@ -38,28 +38,24 @@
         results = document.getElementById("results");
         container = document.getElementById("rcontainer");
         text = text.replace(/\n/g, " <br> ");
-        textsplit = text.split(/\s+/);
+        punct = /[,\.\?\!@#\$%\^&\*\(\)\[\]\{\}":;~\-\+=<>]+/g;
+        ptext = text.replace(punct, " @@@$&@@@ ");
+        textsplit = ptext.split(/\s/);
         resarray = [];
         for (var i = 0; i < textsplit.length; i++) {
-          syll = textsplit[i].toLowerCase();
+          syll = textsplit[i];
           ispy = false;
-          stripped = syll.replace(/(.*[\d¹²³⁴-⁹˥˧˨˩]).*/, "$1");
-          trailing = syll.replace(/.*[\d¹²³⁴-⁹˥˧˨˩]/, "");
-          if (/1|4/.test(frompin)) {
-            puncts = /[,\.\?\!@#\$%\^&\*\(\)\[\]\{\}":;~\-\+=<>]+$/;
-            punctt = /.*([,\.\?\!@#\$%\^&\*\(\)\[\]\{\}":;~\-\+=<>]*)$/;
-            stripped = syll.replace(puncts, "");
-            trailing = syll.replace(punctt, "$1");
-          }
-          for (var key in yuepin) {
-            if (yuepin.hasOwnProperty(key)) {
-              line = yuepin[key];
-              linesplit = line.split(',');
-              source = linesplit[frompin];
-              target = linesplit[topin];
-              if (source == stripped) {
-                resarray.push(target + trailing);
-                ispy = true;
+          if (!/@/.test(syll)) {
+            for (var key in yuepin) {
+              if (yuepin.hasOwnProperty(key)) {
+                line = yuepin[key];
+                linesplit = line.split(',');
+                source = linesplit[frompin];
+                target = linesplit[topin];
+                if (source == syll.toLowerCase()) {
+                  resarray.push(target);
+                  ispy = true;
+                }
               }
             }
           }
@@ -68,7 +64,7 @@
           }
         }
         container.style.display = "";
-        results.value = resarray.join(" ");
+        results.value = resarray.join(" ").replace(/\s?@@@\s?/g, "").replace(/ ?<br> ?/g, "\n");
       }
 
     </script>
@@ -79,7 +75,7 @@
     </nav>
     <h1>粵語拼音轉換</h1>
     <div id="converter">
-      <textarea id="converttext" rows=10 cols=40 placeholder="輸入粵語拼音" accesskey="i"></textarea><br>
+      <textarea id="converttext" rows=10 cols=40 placeholder="輸入粵語拼音" accesskey="i" oninput="yuepinzh()"></textarea><br>
       原文：
       <select id="frompin" onchange="yuepinzh()" accesskey="f">
         <option value="0">耶魯拼音（數字）</option>
