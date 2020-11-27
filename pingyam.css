@@ -1,0 +1,21 @@
+body {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#convertto {
+  padding: 15px;
+  padding-bottom: 0;
+}
+#results {
+  padding-top: 15px;
+}
+#rcontainer {
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid #2b90d9;
+  border-radius: 5px;
+}
+nav {
+  padding-right: 15px;
+  text-align: right;
+}
