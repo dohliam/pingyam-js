@@ -8,47 +8,54 @@
     <link rel="stylesheet" type="text/css" href="pingyam.css"/>
     <script src="pingyam.js" type="text/javascript"></script>
     <script src="data.js" type="text/javascript"></script>
+    <script src="strings.js" type="text/javascript"></script>
   </head>
   <body onload="window.converttext.focus();">
-    <nav>
-      <a href="index_en.html">ENG</a> · <a href="https://github.com/dohliam/pingyam-js">原始碼</a>
-    </nav>
-    <h1>粵語拼音轉換</h1>
+    <header>
+      <a class="tr-string" data-tr="src" href="https://github.com/dohliam/pingyam-js">原始碼</a> · 
+      <select name="lang_selector" id="lang_selector" accesskey="l" onchange="translate_string(this.value)">
+        <option class="tr-string" data-tr="lang" value="" disabled="" SELECTED>Language</option>
+        <option value="zht">中文（繁體）</option>
+        <option value="zhs">中文（简体）</option>
+        <option value="en">English</option>
+      </select>
+    </header>
+    <h1 class="tr-string" data-tr="title">粵語拼音轉換</h1>
     <div id="converter">
-      <textarea id="converttext" rows=10 cols=40 placeholder="輸入粵語拼音" accesskey="i" oninput="yuepinzh()"></textarea><br>
-      原文：
+      <textarea class="tr-string" data-tr="input" id="converttext" rows=10 cols=40 placeholder="輸入粵語拼音" accesskey="i" oninput="yuepinzh()"></textarea><br>
+      <span class="tr-string" data-tr="orig">原文：</span>
       <select id="frompin" onchange="yuepinzh()" accesskey="f">
-        <option value="0">耶魯拼音（數字）</option>
-        <option value="1">耶魯拼音（調符）</option>
-        <option value="2">教院拼音</option>
-        <option value="3">黃錫凌（數字）</option>
-        <option value="4">黃錫凌（調符）</option>
-        <option value="5">國際音標</option>
-        <option value="6">粵拼</option>
-        <option value="7">廣州拼音</option>
-        <option value="8">劉錫祥</option>
-        <option value="9">粵語拼音字（數字）</option>
-        <option value="10">粵語拼音字（調符）</option>
+        <option class="tr-string" data-tr="py0" value="0">耶魯拼音（數字）</option>
+        <option class="tr-string" data-tr="py1" value="1">耶魯拼音（調符）</option>
+        <option class="tr-string" data-tr="py2" value="2">教院拼音</option>
+        <option class="tr-string" data-tr="py3" value="3">黃錫凌（數字）</option>
+        <option class="tr-string" data-tr="py4" value="4">黃錫凌（調符）</option>
+        <option class="tr-string" data-tr="py5" value="5">國際音標</option>
+        <option class="tr-string" data-tr="py6" value="6">粵拼</option>
+        <option class="tr-string" data-tr="py7" value="7">廣州拼音</option>
+        <option class="tr-string" data-tr="py8" value="8">劉錫祥</option>
+        <option class="tr-string" data-tr="py9" value="9">粵語拼音字（數字）</option>
+        <option class="tr-string" data-tr="py10" value="10">粵語拼音字（調符）</option>
       </select><br>
-      轉成：
+      <span class="tr-string" data-tr="out">轉成：</span>
       <select id="topin" onchange="yuepinzh()" accesskey="t">
-        <option value="0">耶魯拼音（數字）</option>
-        <option value="1">耶魯拼音（調符）</option>
-        <option value="2">教院拼音</option>
-        <option value="3">黃錫凌（數字）</option>
-        <option value="4">黃錫凌（調符）</option>
-        <option value="5">國際音標</option>
-        <option value="6" SELECTED>粵拼</option>
-        <option value="7">廣州拼音</option>
-        <option value="8">劉錫祥</option>
-        <option value="9">粵語拼音字（數字）</option>
-        <option value="10">粵語拼音字（調符）</option>
+        <option class="tr-string" data-tr="py0" value="0">耶魯拼音（數字）</option>
+        <option class="tr-string" data-tr="py1" value="1">耶魯拼音（調符）</option>
+        <option class="tr-string" data-tr="py2" value="2">教院拼音</option>
+        <option class="tr-string" data-tr="py3" value="3">黃錫凌（數字）</option>
+        <option class="tr-string" data-tr="py4" value="4">黃錫凌（調符）</option>
+        <option class="tr-string" data-tr="py5" value="5">國際音標</option>
+        <option class="tr-string" data-tr="py6" value="6" SELECTED>粵拼</option>
+        <option class="tr-string" data-tr="py7" value="7">廣州拼音</option>
+        <option class="tr-string" data-tr="py8" value="8">劉錫祥</option>
+        <option class="tr-string" data-tr="py9" value="9">粵語拼音字（數字）</option>
+        <option class="tr-string" data-tr="py10" value="10">粵語拼音字（調符）</option>
       </select><br>
 
-      <button type="button" onclick="yuepinzh()">轉換</button><br>
+      <button class="tr-string" data-tr="convert" type="button" onclick="yuepinzh()">轉換</button><br>
 
       <div id="rcontainer" style="display:none">
-        <div id="rheader"><h3>結果：</h3></div>
+        <div id="rheader"><h3 class="tr-string" data-tr="result">結果：</h3></div>
         <textarea id="results" placeholder="" accesskey="o"></div>
       </div>
     </div>

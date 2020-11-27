@@ -33,3 +33,18 @@ function yuepinzh(v) {
   container.style.display = "";
   results.value = resarray.join(" ").replace(/\s?@@@\s?/g, "").replace(/ ?<br> ?/g, "\n");
 }
+
+function translate_string(lang) {
+  strings = document.getElementsByClassName("tr-string");
+  for (var i = 0; i < strings.length; i++) {
+    current = strings[i];
+    string_id = current.dataset.tr;
+    text = current.textContent;
+    replace_string = lang_strings[lang][string_id];
+    if (current.placeholder) {
+      current.placeholder = replace_string;
+    } else {
+      current.innerHTML = replace_string;
+    }
+  }
+}
