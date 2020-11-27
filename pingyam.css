@@ -19,3 +19,6 @@ nav {
   padding-right: 15px;
   text-align: right;
 }
+header {
+  float: right;
+}
