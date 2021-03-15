@@ -54,9 +54,14 @@ There is an online demo [here](https://dohliam.github.io/pingyam/).
   * **Penkyamp** (numerals): _yap6 sat6 yim6 sat1 gamp6 gant2 gap1 jay3_
   * **Penkyamp** (diacritics): _yàp sàt yìm sät gàmp gãnt gäp jây_
 
+## See also
+
+* [Pingyam database](https://github.com/kfcd/pingyam) - A comprehensive list of every possible Cantonese syllable in all major romanization systems
+* [pingyam-rb](https://github.com/dohliam/pingyam-rb) - Ruby library for converting between Cantonese romanization systems
+
 ## License
 
-Romanization data has been released under a CC-BY license by [kfcd](https://github.com/kfcd/).
+Romanization data has been released under a [CC BY license](https://github.com/kfcd/pingyam/blob/master/LICENSE) by the [kfcd](https://github.com/kfcd/) project.
 
 CSS by [Concise CSS](https://github.com/ConciseCSS/concise.css) ([MIT](https://github.com/ConciseCSS/concise.css/blob/master/LICENSE))
 
