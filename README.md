@@ -30,7 +30,7 @@ There is an online demo [here](https://dohliam.github.io/pingyam/).
 
 * 月光光 照地堂 中秋看燈賞月忙
   * **Yale** (numerals): _yut9 gwong1 gwong1 jiu3 dei6 tong4 jung1 chau1 hon3 dang1 seung2 yut9 mong4_
-  * **Yale** (diacritics): _yuht gwōng gwōng jiu deih tòhng jūng chāu hon dāng seúng yuht mòhng_
+  * **Yale** (diacritics): _yuht gwōng gwōng jiu deih tòhng jūng chāu hon dāng séung yuht mòhng_
   * **Cantonese Pinyin**: _jyt9 gwong1 gwong1 dziu3 dei6 tong4 dzung1 tsau1 hon3 dang1 soeng2 jyt9 mong4_
   * **S. L. Wong** (numerals): _jyt⁹ gwɔŋ¹ gwɔŋ¹ dziu³ dei⁶ tɔŋ⁴ dzʊŋ¹ tsɐu¹ hɔn³ dɐŋ¹ sœŋ² jyt⁹ mɔŋ⁴_
   * **S. L. Wong** (diacritics): _\_jyt 'gwɔŋ 'gwɔŋ ¯dziu _dei ˌtɔŋ 'dzʊŋ 'tsɐu ¯hɔn 'dɐŋ ´sœŋ \_jyt ˌmɔŋ_
