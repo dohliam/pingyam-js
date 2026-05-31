@@ -48,3 +48,12 @@ function translate_string(lang) {
     }
   }
 }
+
+function switchDir() {
+  frompin_el = document.getElementById("frompin");
+  topin_el = document.getElementById("topin");
+  frompin = frompin_el.value;
+  topin = topin_el.value;
+  frompin_el.value = topin;
+  topin_el.value = frompin;
+}

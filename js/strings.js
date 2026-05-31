@@ -18,7 +18,8 @@ var lang_strings = {
     "py8": "Sidney Lau",
     "py9": "Penkyamp (numerals)",
     "py10": "Penkyamp (diacritics)",
-    "lang": "語言"
+    "lang": "語言",
+    "switch": "Switch direction"
   },
   "zhs": {
     "title": "粤语拼音转换",
@@ -39,7 +40,8 @@ var lang_strings = {
     "py8": "刘锡祥",
     "py9": "粤语拼音字（数字）",
     "py10": "粤语拼音字（调符）",
-    "lang": "Language"
+    "lang": "Language",
+    "switch": "切換"
   },
   "zht": {
     "title": "粵語拼音轉換",
@@ -60,6 +62,7 @@ var lang_strings = {
     "py8": "劉錫祥",
     "py9": "粵語拼音字（數字）",
     "py10": "粵語拼音字（調符）",
-    "lang": "Language"
+    "lang": "Language",
+    "switch": "切換"
   }
 };

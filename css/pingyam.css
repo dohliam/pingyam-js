@@ -15,6 +15,9 @@ body {
   border: 2px solid #2b90d9;
   border-radius: 5px;
 }
+#switch-btn {
+  float: right;
+}
 nav {
   padding-right: 15px;
   text-align: right;
